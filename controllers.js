@@ -1,7 +1,11 @@
 const { displayCountdown } = require("./views");
 
 const timer = seconds => {
-  // Your code here...
+  displayCountdown(seconds,loopCountdown)
+};
+
+function loopCountdown(seconds){
+  displayCountdown(seconds,loopCountdown);
 };
 
 module.exports = {
