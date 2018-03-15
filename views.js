@@ -9,19 +9,19 @@ const displayCountdown = seconds => {
   
   minutes = Math.floor(seconds/60);
   seconds = Math.floor(seconds%60);
-  if(minutes>10 && seconds>10){
+  if(minutes>=10 && seconds>=10){
     figlet(minutes+':'+seconds,function(err, data){
       if(!err){
         console.log(data);
       }
     })
-  }else if(minutes > 10 && seconds<10){
+  }else if(minutes >= 10 && seconds<10){
     figlet(minutes+':0'+seconds,function(err, data){
       if(!err){
         console.log(data);
       }
     })
-  }else if(minutes<10 && seconds>10){
+  }else if(minutes<10 && seconds>=10){
     figlet('0'+minutes+':'+seconds,function(err, data){
       if(!err){
         console.log(data);
