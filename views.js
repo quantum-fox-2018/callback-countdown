@@ -14,9 +14,12 @@ const displayCountdown = timeFormat => {
     console.log(chalk.red(figlet.textSync('00 : 0' + timeFormat)));
   } else if (timeFormat < 60) {
     console.log(chalk.cyan(figlet.textSync('00 : ' + timeFormat)));
-  } else if(timeFormat < 60){
-    console.log(chalk.yellow(figlet.textSync('00 : ' + timeFormat)));
+  } else if(timeFormat == 60){
+    console.log(chalk.yellow(figlet.textSync('01 : 0' + timeFormat%60)));
+  } else if(timeFormat > 60){
+    console.log(chalk.yellow(figlet.textSync('01 : 0' + timeFormat%60)));
   }
+
 };
 
 module.exports = {
