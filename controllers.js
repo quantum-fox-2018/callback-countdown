@@ -5,8 +5,6 @@ const timer = seconds => {
   var intervalId = setInterval(() => {
 
     let minutes = 0;
-    let minutesFormat = "";
-    let secondsFormat = "";
     let timeCountdown = seconds;
 
     while(seconds>=60){
@@ -14,21 +12,7 @@ const timer = seconds => {
       seconds-=60;
     }
 
-    if(minutes<10){
-      minutesFormat = "0" + minutes;
-    }
-    else{
-      minutesFormat = minutes.toString();
-    }
-
-    if(seconds<10){
-      secondsFormat = "0" + seconds;
-    }
-    else{
-      secondsFormat = seconds.toString();
-    }
-
-    var timeFormat = `${minutesFormat} : ${secondsFormat}`
+    var timeFormat = [minutes,seconds];
 
 
     displayCountdown(timeFormat);
